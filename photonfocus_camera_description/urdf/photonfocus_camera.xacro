@@ -2,10 +2,9 @@
 <robot name="photonfocus_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find photonfocus_camera_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find photonfocus_camera_description)/urdf/photonfocus_camera.trans" />
 <xacro:include filename="$(find photonfocus_camera_description)/urdf/photonfocus_camera.gazebo" />
 
-<xacro:macro name="photonfocus_camera" params="parent camera_name">
+<xacro:macro name="photonfocus_camera" params="parent">
 	<link name="base_link">
 	  <inertial>
 	    <origin rpy="0 0 0" xyz="1.7763568394002505e-17 3.552713678800501e-17 0.0046742040606025685"/>
@@ -221,5 +220,9 @@
 	  <parent link="Component4_1_1_1_1"/>
 	  <child link="Component5_1_1_1_1"/>
 	</joint>
+
+	<!-- extensions -->
+	<xacro:photonfocus_camera_gazebo/>
+
 </xacro:macro>
 </robot>
