@@ -24,7 +24,6 @@
     <include file="$(find med7pf_description)/launch/med7pf_upload.launch">
         <arg name="hardware_interface" value="$(arg hardware_interface)"/>
         <arg name="robot_name" value="$(arg robot_name)" />
-        <arg name="endoscope_name" value="$(arg endoscope_name)" />
     </include>
 
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
