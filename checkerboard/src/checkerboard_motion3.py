@@ -19,7 +19,7 @@ if __name__ == '__main__':
     rospy.init_node('moveit_motion_checkerboard')
     robot = moveit_commander.RobotCommander()
 
-    name = 'arm'
+    name = 'arm_pf'
     group = moveit_commander.MoveGroupCommander(name)
     group.set_max_velocity_scaling_factor(0.01)
 
