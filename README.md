@@ -1,6 +1,6 @@
 # HSI_KUKA 
 Repository to be used in conjunction with fri_ros repository for controlling KUKA with HSI cameras. 
-##Set up 
+## Set up 
 First set up as recommended in the fri_ros repository. Then use 
 ``` shell 
 cd fri_ros_ws/src
