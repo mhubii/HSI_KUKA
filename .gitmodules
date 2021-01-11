@@ -1,0 +1,3 @@
+[submodule "fri_ros"]
+	path = fri_ros
+	url = https://github.com/KCL-BMEIS/fri_ros.git
