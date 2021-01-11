@@ -2,7 +2,7 @@
 <robot name="photonfocus_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find photonfocus_camera_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find photonfocus_camera_description)/urdf/photonfocus_camera.gazebo" />
+<xacro:include filename="$(find photonfocus_camera_description)/urdf/photonfocus_camera.gazebo.xacro" />
 
 <xacro:macro name="photonfocus_camera" params="parent">
 	<link name="base_link">
