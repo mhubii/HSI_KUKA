@@ -2,7 +2,7 @@
 <launch>
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
-  <arg name="urdf_path" default="/home/ab20/fri_ros_ws/src/HSI/med7PF_description/urdf/lbr_photonfocus_camera.urdf.xacro"/>
+  <arg name="urdf_path" default="$(find photonfocus_camera_description)/urdf/lbr_photonfocus_camera.urdf.xacro"/>
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">

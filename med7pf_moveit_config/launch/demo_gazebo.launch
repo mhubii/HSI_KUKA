@@ -22,7 +22,7 @@
   <arg name="gazebo_gui" default="true"/>
   <arg name="paused" default="false"/>
   <!-- By default, use the urdf location provided from the package -->
-  <arg name="urdf_path" default="/home/ab20/fri_ros_ws/src/HSI/med7PF_description/urdf/lbr_photonfocus_camera.urdf.xacro"/>
+  <arg name="urdf_path" default="$(find photonfocus_camera_description)/urdf/lbr_photonfocus_camera.urdf.xacro"/>
 
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(find med7pf_moveit_config)/launch/gazebo.launch" >
