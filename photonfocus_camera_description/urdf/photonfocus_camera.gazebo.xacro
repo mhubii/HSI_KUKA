@@ -2,9 +2,12 @@
 <robot name="photonfocus_camera" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:macro name="photonfocus_camera_gazebo">
-
+  
   <xacro:property name="body_color" value="Gazebo/Silver" />
 
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="control"/>
+  </gazebo>
   <gazebo reference="base_link">
     <material>${body_color}</material>
     <mu1>0.2</mu1>
@@ -13,49 +16,14 @@
     <gravity>true</gravity>
   </gazebo>
 
-  <gazebo reference="Component8_1_1_1_1">
+  <gazebo reference="link_1_1">
     <material>${body_color}</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
-  <gazebo reference="Component7_1_1_1_1">
-    <material>${body_color}</material>
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <selfCollide>true</selfCollide>
-  </gazebo>
-
-  <gazebo reference="Component6_1_1_1_1">
-    <material>${body_color}</material>
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <selfCollide>true</selfCollide>
-  </gazebo>
-
-  <gazebo reference="Component2_1_1_1_1">
-    <material>${body_color}</material>
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <selfCollide>true</selfCollide>
-  </gazebo>
-
-  <gazebo reference="Component3_1_1_1_1">
-    <material>${body_color}</material>
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <selfCollide>true</selfCollide>
-  </gazebo>
-
-  <gazebo reference="Component4_1_1_1_1">
-    <material>${body_color}</material>
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <selfCollide>true</selfCollide>
-  </gazebo>
-
-  <gazebo reference="Component5_1_1_1_1">
+  <gazebo reference="camera_link_1">
     <material>${body_color}</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
@@ -65,3 +33,4 @@
 </xacro:macro>
 
 </robot>
+  
