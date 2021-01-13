@@ -8,9 +8,6 @@
   <!-- By default, we are not in debug mode -->
   <arg name="debug" default="false" />
 
-  <!-- By default, we won't load or override the robot_description -->
-  <arg name="load_robot_description" default="false"/>
-
   <!--
   By default, hide joint_state_publisher's GUI
 
