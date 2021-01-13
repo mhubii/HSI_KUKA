@@ -7,9 +7,9 @@
         <xacro:include filename="$(find photonfocus_camera_description)/urdf/photonfocus_camera.gazebo.xacro" />
         
         <!--joint between {parent} and link_0-->
-        <joint name="${parent}_${endoscope_name}_joint" type="fixed">
+        <joint name="${parent}_photonfocus_joint" type="fixed">
             <parent link="${parent}"/>
-            <child link="${endoscope_name}_link_0"/>
+            <child link="link_0"/>
             <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
         </joint>
 
@@ -102,7 +102,7 @@
 
 
         <!-- extensions -->
-        <xacro:storz_endoscope_gazebo endoscope_name="${endoscope_name}" robot_name="${robot_name}"/>
+        <xacro:storz_endoscope_gazebo/>
 
     </xacro:macro>
 </robot>
