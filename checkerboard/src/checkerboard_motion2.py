@@ -10,7 +10,7 @@ import copy
 
 rospy.init_node('moveit_motion_checkerboard')
 
-name = 'arm_pf'
+name = 'arm_photonfocus'
 group = moveit_commander.MoveGroupCommander(name)
 group.set_max_velocity_scaling_factor(0.01)
 
