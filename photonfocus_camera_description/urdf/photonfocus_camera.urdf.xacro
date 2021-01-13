@@ -6,9 +6,13 @@
     <!-- Include camera xacro -->
     <xacro:include filename="$(find photonfocus_camera_description)/urdf/photonfocus_camera.xacro"/>
 
+    <!--  Arguments for the med7 macro  -->
+    <xacro:arg name="camera_name" default="photonfocus_camera"/>
+    <xacro:arg name="robot_name" default="lbr"/>
+
     <!-- fix to world -->
     <link name="world"/>
 
     <!-- insert camera -->
-    <xacro:photonfocus_camera parent="world"/>
+    <xacro:photonfocus_camera camera_name="$(arg camera_name)" robot_name="$(arg robot_name)" parent="world"/>
 </robot> 

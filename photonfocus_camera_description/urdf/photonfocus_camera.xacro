@@ -1,19 +1,20 @@
 <?xml version="1.0" ?>
 <robot name="photonfocus_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="photonfocus_camera" params="parent">
+    <xacro:macro name="photonfocus_camera" params="camera_name robot_name parent">
 
+        <!-- include gazebo specifications -->
         <xacro:include filename="$(find photonfocus_camera_description)/urdf/materials.xacro" />
         <xacro:include filename="$(find photonfocus_camera_description)/urdf/photonfocus_camera.gazebo.xacro" />
         
         <!--joint between {parent} and link_0-->
-        <joint name="${parent}_photonfocus_camera_joint" type="fixed">
+        <joint name="${parent}_${camera_name}_joint" type="fixed">
             <parent link="${parent}"/>
-            <child link="link_0"/>
+            <child link="${camera_name}_link_0"/>
             <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
         </joint>
 
-        <link name="link_0">
+        <link name="${camera_name}_link_0">
             <inertial>
                 <origin rpy="0 0 0" xyz="0.0004526550759665437 0.0005013636920587692 0.01966691095028127"/>
                 <mass value="0.40283012340707985"/>
@@ -34,13 +35,13 @@
             </collision>
         </link>
 
-        <joint name="joint_1" type="fixed">
+        <joint name="${camera_name}_joint_1" type="fixed">
             <origin rpy="0 0 0" xyz="-0.005763 0.000949 0.059647"/>
-            <parent link="link_0"/>
-            <child link="link_1"/>
+            <parent link="${camera_name}_link_0"/>
+            <child link="${camera_name}_link_1"/>
         </joint>
 
-        <link name="link_1">
+        <link name="${camera_name}_link_1">
             <inertial>
                 <origin rpy="0 0 0" xyz="-0.0029521431378939584 -0.015030724993614833 0.04528035169041975"/>
                 <mass value="0.5898731797531614"/>
@@ -61,13 +62,13 @@
             </collision>
         </link>
 
-        <joint name="joint_2" type="fixed">
+        <joint name="${camera_name}_joint_2" type="fixed">
             <origin rpy="0 0 0" xyz="0.009 0.12 0.04"/>
-            <parent link="link_1"/>
-            <child link="link_2"/>
+            <parent link="${camera_name}_link_1"/>
+            <child link="${camera_name}_link_2"/>
         </joint>
 
-        <link name="link_2">
+        <link name="${camera_name}_link_2">
             <inertial>
                 <origin rpy="0 0 0" xyz="-0.003122152950603064 -0.036121615255736886 0.00045540214292298653"/>
                 <mass value="0.7434193408324884"/>
@@ -88,13 +89,13 @@
             </collision>
         </link>
     
-        <joint name="joint_3" type="fixed">
+        <joint name="${camera_name}_joint_3" type="fixed">
             <origin rpy="0 0 0" xyz="-0.003223 0.103999 0.00727"/>
-            <parent link="link_2"/>
-            <child link="link_cm"/>
+            <parent link="${camera_name}_link_2"/>
+            <child link="${camera_name}_link_cm"/>
         </joint>
 
-        <link name="link_cm"/>
+        <link name="${camera_name}_link_cm"/>
 
         <!-- TODO: add optical frame https://answers.ros.org/question/232534/gazebo-camera-frame-is-inconsistent-with-rviz-opencv-convention/ -->
 
@@ -102,7 +103,7 @@
 
 
         <!-- extensions -->
-        <xacro:photonfocus_camera_gazebo/>
+        <xacro:photonfocus_camera_gazebo camera_name="${camera_name}" robot_name="${robot_name}"/>
 
     </xacro:macro>
 </robot>

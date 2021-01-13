@@ -1,34 +1,34 @@
 <?xml version="1.0" ?>
 <robot name="photonfocus_camera" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:macro name="photonfocus_camera_gazebo">
-  
-  <xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:macro name="photonfocus_camera_gazebo" params="camera_name robot_name">
 
-  <gazebo>
-    <plugin filename="libgazebo_ros_control.so" name="control"/>
-  </gazebo>
-  <gazebo reference="link_0">
-    <material>${body_color}</material>
+<!-- link 0 -->
+  <gazebo reference="${camera_name}_link_0">
+    <material>Gazebo/Grey</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
     <gravity>true</gravity>
   </gazebo>
 
-  <gazebo reference="link_1">
-    <material>${body_color}</material>
+  <!-- link 1 -->
+  <gazebo reference="${camera_name}_link_1">
+    <material>Gazebo/Grey</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
-  <gazebo reference="link_2">
-    <material>${body_color}</material>
+  <!-- link 2 -->
+  <gazebo reference="${camera_name}_link_2">
+    <material>Gazebo/Grey</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
+
+  <!-- TODO: add camera -->
 
 </xacro:macro>
 
