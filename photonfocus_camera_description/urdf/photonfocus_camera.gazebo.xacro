@@ -8,7 +8,7 @@
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="control"/>
   </gazebo>
-  <gazebo reference="base_link">
+  <gazebo reference="link_0">
     <material>${body_color}</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
@@ -16,14 +16,14 @@
     <gravity>true</gravity>
   </gazebo>
 
-  <gazebo reference="link_1_1">
+  <gazebo reference="link_1">
     <material>${body_color}</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
-  <gazebo reference="camera_link_1">
+  <gazebo reference="link_2">
     <material>${body_color}</material>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
